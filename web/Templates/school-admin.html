@@ -1,0 +1,317 @@
+<!-- /* CREATED BY :
+
+1. Vijaya Lakshmi Punuru - 1001965490
+2. Minish Venkata Adinarayana Pabbisetty - 1002028583
+3. Nalini Pasupuleti - 1001995435 */ -->
+
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Colour used is solid black */
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        button {
+            color: white; /* Colour used is white */
+            padding: 10px 15px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 80px;
+            border-radius: 7px;
+        }
+        
+        .left {
+            width: 40%;
+            float: left;
+            padding: 20px;
+            text-align: center;
+            border-right: 2px solid black; /* Colour used is solid black */
+            border-radius: 1px;
+        }
+        
+        .right {
+            width: 55%;
+            float: left;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .column {
+            float: left;
+            width: 50%;
+            padding: 30px;
+            height: auto;
+        }
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        img {
+            width: 60%;
+        }
+        
+        .clubs {
+            float: left;
+            width: 50%;
+        }
+        
+        .buy {
+            width: 33%;
+            /* float: left; */
+            text-align: center;
+        }
+        
+        .bottom-div {
+            width: 100%;
+            float: left;
+            text-align: center;
+        }
+        
+        .margin {
+            margin-top: 25px;
+        }
+        
+        .checkout {
+            background-color: rgb(240, 227, 74); /* Colour used is yellow*/
+        }
+        
+        .remove {
+            background-color: rgb(219, 60, 52); /* Colour used is light shade of red */
+        }
+        
+        .return {
+            background-color: #3e74e0; /* Colour used is blue */
+        }
+        
+        .track {
+            background-color: #4bdb7b; /* Colour used is green */
+        }
+        
+        .delivered {
+            background-color: #524c4c; /* Colour used is grey */
+        }
+        
+        .create {
+            width: 200px;
+            background-color: #3e74e0; /* Colour used is blue */
+        }
+        
+        .leave {
+            width: 50%;
+            background-color: #98999c; /* Colour used is light gray */
+        }
+        
+        .zoom {
+            padding: 50px;
+            transition: transform .2s;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .zoom-img {
+            margin-top: 50px;
+            width: 100%;
+        }
+        
+        .zoom:hover {
+            -ms-transform: scale(1.5);
+            /* IE 9 */
+            -webkit-transform: scale(1.5);
+            /* Safari 3-8 */
+            transform: scale(1.5);
+        }
+        
+        @media screen and (max-width: 600px) {
+            .left,
+            .right {
+                width: 100%;
+                margin-top: 0;
+            }
+            .left {
+                border-right: none;
+            }
+            button {
+                color: white; /* Colour used is white */
+                padding: 5px 5px;
+                border: none;
+                cursor: pointer;
+                width: 80px;
+                border-radius: 7px;
+            }
+            .buy {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <ul>
+                <li><a style="font-style: italic;"><b>UTA Library</b></a></li>
+                <li style="float:right"><a href="login.html">Logout</a></li>
+                <li style="float:right"><a href="contact-us.html">Contact Us</a></li>
+                <li style="float:right"><a class="active" href="home.html">Home</a></li>
+                
+            </ul>
+        </div>
+    </header>
+    <div class="margin"></div>
+    <div class="left">
+        <h2 style="text-align:center">Librarian Profile</h2>
+
+        <div class="card">
+            <img src="./images/profile-pic.jpg" alt="John" style="width:100%">
+            <h3>Librarian Name</h3>
+            <p>Admin Department</p>
+            <p>University of Texas at Arlington</p>
+            <p><u>Librarian Details</u></p>
+            <table>
+                <tr>
+                    <td>Admin Id:</td>
+                    <td>1000000000</td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td>9999999999</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>admin@uta.edu</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="zoom">
+            <h3><u>Activity</u></h3>
+            <img class="zoom-img" src="./images/sales-report1.jpg" />
+        </div>
+    </div>
+    <div class="row bottom-div">
+        <h3><u>Manage Users</u></h3>
+        <div class="column products buy">
+            <img src="./images/students/student.png" />
+            <br><b>Student 2</b>
+            <br>
+            <p>1000000000<br>
+                <button class="track" type="button">Edit</button>
+                <button class="remove" type="button">Delete</button></p>
+        </div>
+        <div class="column products buy">
+            <img src="./images/students/student.png" />
+            <br><b>Student 1</b>
+            <br>
+            <p>1000000001<br>
+                <button class="track" type="button">Edit</button>
+                <button class="remove" type="button">Delete</button></p>
+        </div>
+        <div class="column products buy">
+            <img src="./images/students/student.png" />
+            <br><b>Student 3</b>
+            <br>
+            <p>1000000002<br>
+                <button class="track" type="button">Edit</button>
+                <button class="remove" type="button">Delete</button></p>
+        </div>
+        <div class="column products buy">
+            <img src="./images/students/student.png" />
+            <br><b>Student 4</b>
+            <br>
+            <p>1000000003<br>
+                <button class="track" type="button">Edit</button>
+                <button class="remove" type="button">Delete</button></p>
+        </div>
+    </div>
+    <div class="row bottom-div">
+        <div class="column products buy">
+            <img src="./images/owners/owner.png" />
+            <br><b>Faculty 1</b>
+            <br>
+            <p>19999991<br>
+                <button class="track" type="button">Edit</button>
+                <button class="remove" type="button">Delete</button></p>
+        </div>
+        <div class="column products buy">
+            <img src="./images/owners/owner.png" />
+            <br><b>Faculty 2</b>
+            <br>
+            <p>19999992<br>
+                <button class="track" type="button">Edit</button>
+                <button class="remove" type="button">Delete</button></p>
+        </div>
+        <div class="column products buy">
+            <img src="./images/owners/owner.png" />
+            <br><b>Faculty 3</b>
+            <br>
+            <p>19999993<br>
+                <button class="track" type="button">Edit</button>
+                <button class="remove" type="button">Delete</button></p>
+        </div>
+        <div class="row bottom-div">
+            <button class="create">Add more</button>
+        </div>
+    </div>
+
+    <div class="row bottom-div">
+        <h3><u>Purchased Books</u></h3>
+        <div class="column products buy">
+            <img src="./images/clubs/coffee-club.png" />
+            <br><b>Dey Mysterious</b><br>
+            <button class="track" type="button">Edit</button>
+            <button class="remove" type="button">Delete</button>
+        </div>
+        <div class="column products buy">
+            <img src="./images/clubs/i-club.png" />
+            <br><b>Harry Potter: Chronicles</b>
+            <br><button class="track" type="button">Edit</button>
+            <button class="remove" type="button">Delete</button>
+        </div>
+    </div>
+
+    <div class="row bottom-div">
+        <h3><u>Available Books</u></h3>
+        <div class="column products buy">
+            <img src="./images/posts/party.png" />
+            <br><b>Harry Potter: Prisoners Tales</b>
+            <br><button class="track" type="button">Edit</button>
+            <button class="remove" type="button">Delete</button>
+        </div>
+        <div class="column products buy">
+            <img src="./images/posts/student-council.png" />
+            <br><b>Contagious Enigma</b>
+            <br><button class="track" type="button">Edit</button>
+            <button class="remove" type="button">Delete</button>
+        </div>
+    </div>
+    <div class="row bottom-div">
+        <button class="create">Add more</button>
+    </div>
+
+    </div>
+</body>
+
+</html>

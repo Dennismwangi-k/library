@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <style>
+        form.nosubmit {
+            border: none;
+            padding-left: 10%;
+            margin-top: 100px;
+        }
+
+        input.nosubmit {
+            text-align: center;
+            width: 80%;
+            border: 1px solid #555;
+            /* Colour used is davy's gray */
+            display: block;
+            padding: 9px 4px 9px 40px;
+            border-radius: 5px;
+        }
+
+        .bottom-div {
+            text-align: center;
+            margin-top: 50px;
+            width: 100%;
+            float: left;
+        }
+
+        @media screen and (max-width: 700px) {
+            .bottom-div {
+                width: 80%;
+                margin-top: 0;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a style="font-style: italic;"><b>UTA Library</b></a></li>
+            <li><a class="active" href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+    </div>
+    <div class="bottom-div">
+        <h1>Welcome to UTA Library</h1>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+<!-- /* CREATED BY :
+
+1. Vijaya Lakshmi Punuru - 1001965490
+2. Minish Venkata Adinarayana Pabbisetty - 1002028583
+3. Nalini Pasupuleti - 1001995435 */ -->
+
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Colour used is solid black */
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        button {
+            color: white; /* Colour used is white */
+            padding: 10px 15px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 80px;
+            border-radius: 7px;
+        }
+        
+        .left {
+            width: 40%;
+            float: left;
+            padding: 20px;
+            text-align: center;
+            border-right: 2px solid black; /* Colour used is solid black */
+            border-radius: 1px;
+        }
+        
+        .right {
+            width: 55%;
+            float: left;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .column {
+            float: left;
+            width: 50%;
+            padding: 30px;
+            height: auto;
+        }
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        img {
+            width: 60%;
+        }
+        
+        .clubs {
+            float: left;
+            width: 50%;
+        }
+        
+        .buy {
+            width: 25%;
+            float: left;
+            text-align: center;
+        }
+        
+        .bottom-div {
+            width: 100%;
+            float: left;
+            text-align: center;
+        }
+        
+        .margin {
+            margin-top: 25px;
+        }
+        
+        .checkout {
+            background-color: rgb(240, 227, 74); /* Colour used is yellow*/
+        }
+        
+        .remove {
+            background-color: rgb(219, 60, 52); /* Colour used is light shade of red */
+        }
+        
+        .return {
+            background-color: #3e74e0; /* Colour used is blue */
+        }
+        
+        .track {
+            background-color: #4bdb7b; /* Colour used is green*/
+        }
+        
+        .delivered {
+            background-color: #524c4c; /* Colour used is grey */
+        }
+        
+        .create {
+            width: 50%;
+            background-color: #3e74e0; /* Colour used is blue */
+        }
+        
+        .leave {
+            width: 50%;
+            background-color: #98999c; /* Colour used is grey */
+        }
+        
+        @media screen and (max-width: 600px) {
+            .left,
+            .right {
+                width: 100%;
+                margin-top: 0;
+            }
+            .left {
+                border-right: none;
+            }
+            button {
+                color: white; /* Colour used is white */
+                padding: 5px 5px;
+                border: none;
+                cursor: pointer;
+                width: 80px;
+                border-radius: 7px;
+            }
+            .buy {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <ul>
+                <li><a style="font-style: italic;"><b>UTA Library</b></a></li>
+                <li style="float:right"><a class="active" href="{% url 'home' %}">Home</a></li>
+                <li style="float:right"><a href="{% url 'contact' %}">Contact Us</a></li>
+                <li style="float:right"><a href="{% url 'login' %}">Logout</a></li>
+             
+            </ul>
+        </div>
+    </header>
+    <div class="margin"></div>
+    <div class="left">
+        <h2 style="text-align:center">Student Profile</h2>
+
+        <div class="card">
+            <img src="./images/profile-pic.jpg" alt="John" style="width:100%">
+            <h3>Student Name</h3>
+            <p>Computer Science & Engineering</p>
+            <p>University of Texas at Arlington</p>
+            <p><u>Student Details</u></p>
+            <table>
+                <tr>
+                    <td>Id:</td>
+                    <td>1000000000</td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td>9999999999</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>student@mavs.uta.edu</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="row clubs-div">
+            <h4><u>My Clubs</u></h4>
+            <div class="column clubs">
+                <img src="./images/clubs/coffee-club.png" />
+                <br><b>Coffee Club</b>
+                <br><button class="remove" type="button">Delete</button>
+
+            </div>
+            <div class="column clubs">
+                <img src="./images/clubs/i-club.png" />
+                <br><b>I-Club</b>
+                <br><button class="remove" type="button">Delete</button>
+            </div>
+            <button class="create">Click here to Create New Club</button>
+        </div>
+        <div class="row posts-div">
+            <h4><u>My Posts</u></h4>
+            <div class="column clubs">
+                <img src="./images/posts/party.png" />
+                <br><b>Party</b>
+                <br><button class="remove" type="button">Delete</button>
+            </div>
+            <div class="column clubs">
+                <img src="./images/posts/student-council.png" />
+                <br><b>Student Council</b>
+                <br><button class="remove" type="button">Delete</button>
+            </div>
+        </div>
+        <button class="create">Click here to Create New Post</button>
+    </div>
+    <div class="row bottom-div">
+        <h3><u>Products</u></h3>
+        <div class="column products buy">
+            <img src="./images/products/Microsoft-Office-Logo.png" />
+            <br><b>MS Office</b>
+            <br>
+            <p>$499.00<br>
+                <button class="checkout" type="button">Checkout</button>
+                <button class="remove" type="button">Remove</button></p>
+        </div>
+        <div class="column products buy">
+            <img src="./images/products/hat.png" />
+            <br><b>Hat</b>
+            <br>
+            <p>$29.00<br>
+                <button class="checkout" type="button">Checkout</button>
+                <button class="remove" type="button">Remove</button></p>
+        </div>
+    </div>
+    <div class="row bottom-div">
+        <h3><u>Order History</u></h3>
+        <div class="column products buy">
+            <img src="./images/products/headphone.png" />
+            <br><b>Headphone</b>
+            <br>
+            <p>$49.00<br>
+                <button class="track" type="button">Track</button>
+                <button class="return" type="button">return</button></p>
+        </div>
+        <div class="column products buy">
+            <img src="./images/products/hoodie.png" />
+            <br><b>Hoodie</b>
+            <br>
+            <p>$24.00<br>
+                <button class="track" type="button">Track</button>
+                <button class="return" type="button">return</button></p>
+        </div>
+        <div class="column products buy">
+            <img src="./images/products/tshirt.png" />
+            <br><b>T-shirt</b>
+            <br>
+            <p>$19.00<br>
+                <button class="delivered" type="button">Delivered</button>
+                <button class="return" type="button">return</button></p>
+        </div>
+    </div>
+    <div class="row bottom-div">
+        <h3><u>Other Clubs</u></h3>
+        <div class="column products buy">
+            <img src="./images/clubs/i-club.png" />
+            <br><b>I-Club</b>
+            <br><button class="leave" type="button">Leave</button>
+        </div>
+        <div class="column products buy">
+            <img src="./images/clubs/coffee-club.png" />
+            <br><b>Coffee Club</b>
+            <br><button class="track" type="button">Join</button>
+
+        </div>
+        <div class="column products buy">
+            <img src="./images/clubs/coffee-club.png" />
+            <br><b>Coffee Club</b>
+            <br><button class="track" type="button">Join</button>
+
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc; /* Colour used is chinese silver */
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+        
+        button {
+            color: white;/* Colour used is white*/
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 175px;
+            border-radius: 7px;
+        }
+        
+        .login {
+            background-color: #0ed47e;/* Colour used is very light shade of green*/
+        }
+        
+        .register {
+            background-color: #c2c90b;/* Colour used is yellow*/
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        .margin {
+            margin-top: 100px;
+        }
+        
+        .center {
+            padding: 20px;
+            width: 100%;
+            float: left;
+            text-align: center;
+        }
+        
+        img {
+            width: 150px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-top: black solid 1px;/* Colour used is solid black */
+            border-bottom: black solid 1px;/* Colour used is solid black */
+        }
+        
+        tr {
+            border-bottom: 1px gray solid;/* Colour used is solid gray */
+        }
+        
+        @media screen and (max-width: 600px) {
+            .center {
+                width: 100%;
+                margin-top: 0;
+                border: none;
+            }
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <ul>
+                <li><a style="font-style: italic;"><b>UTA Library</b></a></li>
+                <li><a class="active" href="home.html">Home</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="home.html">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="margin"></div>
+    <div class="center">
+        <h1>Cart</h1><br><br>
+        <table>
+            <tr>
+                <td>
+                    <img src="./images/products/Microsoft-Office-Logo.png" />
+                </td>
+                <td>
+                    <b>MS office: Surviving the corporate</b>
+                </td>
+                <td style="text-align: right;"><b>$499.00</b></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="./images/products/adobe.png" />
+                </td>
+                <td>
+                    <b>Adobe Creative Cloud: Get Creative</b>
+                </td>
+                <td style="text-align: right;"><b>$499.00</b></td>
+        </table>
+        <h3 style="text-align: right;"> Subtotal : $998.00</h3>
+        <a href="#" style="text-align: right;"><button class="register" type="submit">Checkout</button></a>
+    </div>
+
+</body>
+
+</html>

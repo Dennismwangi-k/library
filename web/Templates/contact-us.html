@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        /* Style inputs */
+        
+        input[type=text],
+        input[type=number],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;/* Colour used is chinese silver */
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+        
+        input[type=submit] {
+            background-color: #04AA6D; /* Colour used is medium dark shade of green-cyan */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+            background-color: #45a049; /* Colour used is fruit salad(green colour) */
+        }
+        /* Style the container/contact section */
+        
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;/* Colour used is light shade of red */
+            padding: 10px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        /* Create two columns that float next to eachother */
+        
+        .column {
+            float: left;
+            width: 50%;
+            margin-top: 6px;
+            padding: 20px;
+            height: 100%;
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .left {
+            width: 55%;
+            float: left;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid black; /* Colour used is solid black */
+            border-radius: 5px;
+            margin-top: 5%;
+        }
+        
+        .right {
+            width: 35%;
+            float: left;
+            padding: 20px;
+            text-align: center;
+        }
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 700px) {
+            .left,
+            .right {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <ul>
+                <li><a style="font-style: italic;"><b>UTA Library</b></a></li>
+                <li><a class="active" href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+        <div class="row">
+            <div class="left">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+        
+                    <label for="fname">First Name</label>
+                    {{ form.Fname }}
+                    <label for="lname">Last Name</label>
+                    {{ form.Lname }}
+                    <label for="phone">Phone</label>
+                    {{ form.phone }}
+                    <label for="email">Email</label>
+                    {{ form.email }}
+                    
+                    <label for="message">Message</label>
+                    {{ form.desc }}
+                    <input type="submit">
+                </form>
+
+            </div>
+            <div class="right">
+                <h3><u>Building Hours</u></h3>
+                <p><b>Mon : 8am - 6 pm
+          <br>Tue : 8am - 10 pm
+          <br>Wed: 8am - 6 pm
+          <br>Thu: 8am - 6 pm
+          <br>Fri : 8am - 6 pm
+          <br>Sat : 10am - 4 pm
+          <br>Sun : Closed</b></h5>
+                    <h4>Closed on University Holidays</h4>
+
+                    <h3><u>Address</u></h3>
+                    <p><b>400 Spaniolo Drive
+                Arlington, TX US 76010-1628</b></p>
+                    <h3><u>Phone</u></h3>
+                    <p><b>(817) 272-2785</b></p>
+                    <h3><u>Fax</u></h3>
+                    <p><b>(817) 272-5007</b></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .top-div {
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid black;
+            /* Colour used is solid black */
+            border-radius: 5px;
+            margin-top: 5%;
+        }
+
+        .bottom-div {
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+            margin-top: 5%;
+        }
+
+        /* Create two columns that float next to eachother */
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 20px;
+            height: auto;
+        }
+
+        .column1 {
+            float: left;
+            width: 50%;
+            padding: 20px;
+            height: auto;
+            margin:auto;
+        }
+
+        .club-col {
+            border-right: 2px solid black;
+            /* Colour used is solid black */
+            border-radius: 1px;
+        }
+
+        /* Clear floats after the columns */
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .margin {
+            margin-top: 100px;
+        }
+
+        img {
+            width: 75%;
+        }
+
+        .products {
+            float: left;
+            width: 50%;
+            margin: auto;
+        }
+
+        .clubs {
+            /* float: left; */
+            width: 50%;
+            margin: auto;
+        }
+
+        .posts {
+            /* float: left; */
+            width: 50%;
+            margin: auto;
+        }
+
+        .products-div {
+            margin-top: 100px;
+        }
+
+        .cart {
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+        @media screen and (max-width: 600px) {
+            .column1 {
+                width: 100%;
+                margin-bottom: 50px;
+            }
+
+            .products {
+                width: 50%;
+                margin-top: 0;
+            }
+
+            .posts {
+                width: 50%;
+            }
+
+            .clubs {
+                width: 50%;
+            }
+
+            .club-col {
+                border-right: none;
+            }
+
+            .products-div {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <ul>
+                <li><a style="font-style: italic;"><b>UTA Library</b></a></li>
+                <li style="float:right"><a href="{% url 'login' %}">Logout</a></li>
+                <li style="float:right"><a class="active" href="{% url 'home' %}">Home</a></li>
+                <li style="float:right"><a href="{% url 'contact' %}">Help</a></li>
+                <li style="float:right"><a href="{% url 'profile' %}">Profile</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="margin"></div>
+    <div class="top-div">
+        <h2>Welcome to UTA Library</h2>
+        <p>Hope you are having a Good day</p>
+    </div>
+    <div style="text-align: right;padding: 5px;">
+        <a href="cart.html"><img class="cart" src="./images/icons/cart.png" /></a>
+    </div>
+    <div class="bottom-div">
+        <div class="row">
+            <div class="column1 club-col">
+                <h4><u>Books Completed</u></h4>
+                <div class="clubs">
+                    <br>
+                    <p><b>14</b></p>
+                </div>
+            </div>
+            <div class="column1">
+                <h4><u>Predicted Book Availability</u></h4>
+                <div class="posts">
+                    <img src="./images/posts/party.png" />
+                    <br><b>Party</b>
+                </div>
+            </div>
+        </div>
+        <div class="row products-div" style="align-content:center;">
+            <h4><u>Issued Books </u></h4>
+            <div class="column products">
+                <img src="./images/products/Microsoft-Office-Logo.png" />
+                <br><b>MS Office: Excelling in corporate.</b>
+                <br>
+                <p>$499.00</p>
+            </div>
+            <div class="column products">
+                <img src="./images/products/headphone.png" />
+                <br><b>Music: Create a new world</b>
+                <br>
+                <p>$49.00</p>
+            </div>
+            <div class="column products">
+                <img src="./images/products/hoodie.png" />
+                <br><b>The curious case of Red-Hooded Man</b>
+                <br>
+                <p>$24.00</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
